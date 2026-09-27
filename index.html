@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>สมศักดิ์ นําแสง | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans Thai", sans-serif;
+            background: #f5faf6;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* ===== NAVBAR ===== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 16px 7%;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #176b38;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #176b38;
+        }
+
+
+        /* ===== COVER ===== */
+
+        .cover {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(18,90,45,0.82),
+                    rgba(18,90,45,0.82)
+                ),
+                url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .cover-content {
+            max-width: 900px;
+        }
+
+        .cover h1 {
+            font-size: 58px;
+            margin-bottom: 10px;
+        }
+
+        .cover h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .cover p {
+            font-size: 19px;
+            line-height: 1.9;
+        }
+
+        .cover-button {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 13px 30px;
+
+            background: white;
+            color: #176b38;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+        }
+
+
+        /* ===== SECTION ===== */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title h2 {
+            color: #176b38;
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .title p {
+            color: #777;
+        }
+
+
+        /* ===== ABOUT ===== */
+
+        .about {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+
+            gap: 55px;
+
+            align-items: center;
+        }
+
+        .photo {
+            height: 430px;
+
+            border-radius: 25px;
+
+            border: 4px solid #a6d8b5;
+
+            background: #e8f5eb;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            color: #176b38;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .about-text {
+            font-size: 18px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+
+        /* ===== INFORMATION ===== */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            border-top: 5px solid #75b98b;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .info-card h3 {
+            color: #176b38;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ===== ACTIVITIES ===== */
+
+        .activity {
+            background: white;
+
+            padding: 30px;
+
+            margin-bottom: 22px;
+
+            border-radius: 18px;
+
+            border-left: 6px solid #75b98b;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .activity h3 {
+            color: #176b38;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* ===== PROJECT ===== */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .project h3 {
+            color: #176b38;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ===== GOAL ===== */
+
+        .goal-box {
+            background: #176b38;
+
+            color: white;
+
+            padding: 60px 40px;
+
+            border-radius: 30px;
+
+            text-align: center;
+        }
+
+        .goal-box h2 {
+            font-size: 36px;
+
+            margin-bottom: 20px;
+        }
+
+        .goal-box p {
+            max-width: 780px;
+
+            margin: auto;
+
+            font-size: 18px;
+        }
+
+
+        /* ===== CONTACT ===== */
+
+        .contact {
+            text-align: center;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 50px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .contact p {
+            margin: 8px;
+        }
+
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #104d29;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+
+        /* ===== MOBILE ===== */
+
+        @media(max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .cover h1 {
+                font-size: 40px;
+            }
+
+            .cover h2 {
+                font-size: 22px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 350px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="logo">
+        PORTFOLIO
+    </div>
+
+    <div>
+
+        <a href="#about">ประวัติ</a>
+
+        <a href="#education">การศึกษา</a>
+
+        <a href="#activities">กิจกรรม</a>
+
+        <a href="#projects">ผลงาน</a>
+
+        <a href="#goal">เป้าหมาย</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="cover-content">
+
+        <h1>
+            สมศักดิ์ นําแสง
+        </h1>
+
+        <h2>
+            PORTFOLIO
+        </h2>
+
+        <p>
+            ผู้สนใจด้านบริหารธุรกิจ
+            การจัดการ และการสร้างธุรกิจ
+        </p>
+
+        <p>
+            มุ่งศึกษาต่อคณะบริหารธุรกิจ
+            มหาวิทยาลัยเกษตรศาสตร์
+        </p>
+
+        <a
+            href="#about"
+            class="cover-button"
+        >
+            เข้าสู่ Portfolio
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="title">
+
+        <h2>
+            ประวัติส่วนตัว
+        </h2>
+
+        <p>
+            About Me
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+
+        <!-- พื้นที่รูป -->
+
+        <div class="photo">
+
+            รูปภาพของฉัน
+
+        </div>
+
+
+        <!-- ข้อมูล -->
+
+        <div class="about-text">
+
+            <p>
+                <strong>
+                    ชื่อ : สมศักดิ์ นําแสง
+                </strong>
+            </p>
+
+            <p>
+                ผมเป็นนักเรียนระดับมัธยมศึกษาตอนปลาย
+                และมีความสนใจด้านธุรกิจ การบริหาร
+                การตลาด เทคโนโลยี และการสร้างสรรค์ผลงาน
+            </p>
+
+            <p>
+                ผมต้องการพัฒนาความรู้และประสบการณ์
+                เพื่อเตรียมตัวสำหรับการศึกษาต่อระดับมหาวิทยาลัย
+                และนำความรู้ไปต่อยอดในการสร้างธุรกิจในอนาคต
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <div class="title">
+
+        <h2>
+            ประวัติการศึกษา
+        </h2>
+
+        <p>
+            Education
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                ระดับการศึกษา
+            </h3>
+
+            <p>
+                มัธยมศึกษาตอนปลาย
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                สาขาที่สนใจ
+            </h3>
+
+            <p>
+                บริหารธุรกิจ
+                การจัดการ
+                การตลาด
+                และการสร้างธุรกิจ
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                มหาวิทยาลัยที่สนใจ
+            </h3>
+
+            <p>
+                คณะบริหารธุรกิจ
+                มหาวิทยาลัยเกษตรศาสตร์
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ACTIVITIES ================= -->
+
+<section id="activities">
+
+    <div class="title">
+
+        <h2>
+            กิจกรรม
+        </h2>
+
+        <p>
+            Activities
+        </p>
+
+    </div>
+
+
+    <div class="activity">
+
+        <h3>
+            01 | Coding
+        </h3>
+
+        <p>
+            เข้าร่วมการฝึกอบรมและพัฒนาทักษะ
+            ด้านการเขียนโปรแกรม
+            และเรียนรู้การนำเทคโนโลยีมาประยุกต์ใช้
+            ในการสร้างผลงาน
+        </p>
+
+    </div>
+
+
+    <div class="activity">
+
+        <h3>
+            02 | กิจกรรมการขาย
+        </h3>
+
+        <p>
+            เข้าร่วมกิจกรรมจำหน่ายสินค้า
+            ฝึกการพูดคุยกับลูกค้า
+            การนำเสนอสินค้า
+            และการแก้ไขปัญหาเฉพาะหน้า
+        </p>
+
+    </div>
+
+
+    <div class="activity">
+
+        <h3>
+            03 | STEM Camp
+        </h3>
+
+        <p>
+            เข้าร่วมกิจกรรม STEM
+            เพื่อฝึกการคิดวิเคราะห์
+            การแก้ปัญหา
+            และการทำงานร่วมกับผู้อื่น
+        </p>
+
+    </div>
+
+
+    <div class="activity">
+
+        <h3>
+            04 | กิจกรรมกีฬา
+        </h3>
+
+        <p>
+            เข้าร่วมกิจกรรมกีฬาและการแข่งขัน
+            เพื่อพัฒนาความรับผิดชอบ
+            วินัย และการทำงานเป็นทีม
+        </p>
+
+    </div>
+
+
+    <div class="activity">
+
+        <h3>
+            05 | กิจกรรมด้านภาษาอังกฤษ
+        </h3>
+
+        <p>
+            เข้าร่วมกิจกรรมการแสดงภาษาอังกฤษ
+            และมีส่วนร่วมในการออกแบบเครื่องแต่งกาย
+            โดยประยุกต์ใช้วัสดุที่มีอยู่
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="title">
+
+        <h2>
+            ผลงาน
+        </h2>
+
+        <p>
+            Projects
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <h3>
+                💻 Coding Project
+            </h3>
+
+            <p>
+                ผลงานด้านการเขียนโปรแกรม
+                และการประยุกต์ใช้เทคโนโลยี
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <h3>
+                💼 Business Project
+            </h3>
+
+            <p>
+                ผลงานและกิจกรรมที่เกี่ยวข้องกับ
+                การขาย การตลาด
+                และแนวคิดด้านธุรกิจ
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section>
+
+    <div class="title">
+
+        <h2>
+            ทักษะ
+        </h2>
+
+        <p>
+            Skills
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                Business
+            </h3>
+
+            <p>
+                สนใจด้านการบริหาร
+                การตลาด และธุรกิจ
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Technology
+            </h3>
+
+            <p>
+                Coding และการใช้เทคโนโลยี
+                เพื่อสร้างผลงาน
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Creativity
+            </h3>
+
+            <p>
+                การคิดสร้างสรรค์
+                และการออกแบบแนวคิดใหม่ ๆ
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GOAL ================= -->
+
+<section id="goal">
+
+    <div class="goal-box">
+
+        <h2>
+            เป้าหมายในอนาคต
+        </h2>
+
+        <p>
+
+            ผมมีความตั้งใจศึกษาต่อใน
+            <strong>
+                คณะบริหารธุรกิจ
+                มหาวิทยาลัยเกษตรศาสตร์
+            </strong>
+
+            เพื่อพัฒนาความรู้ด้านธุรกิจ
+            การบริหาร การจัดการ และการตลาด
+
+            และนำความรู้ที่ได้รับ
+            ไปต่อยอดสู่การสร้างธุรกิจ
+            และพัฒนาตนเองในอนาคต
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section>
+
+    <div class="title">
+
+        <h2>
+            ติดต่อ
+        </h2>
+
+        <p>
+            Contact
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <p>
+            <strong>
+                สมศักดิ์ นําแสง
+            </strong>
+        </p>
+
+        <p>
+            Portfolio
+        </p>
+
+        <p>
+            มุ่งศึกษาต่อคณะบริหารธุรกิจ
+            มหาวิทยาลัยเกษตรศาสตร์
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 สมศักดิ์ นําแสง
+    </p>
+
+    <p>
+        Portfolio
+    </p>
+
+</footer>
+
+
+</body>
+</html>
