@@ -1,661 +1,848 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portfolio | สมศักดิ์ นําแสง</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Arial", "Tahoma", sans-serif;
-    background: #f5f8f4;
-    color: #26352b;
-}
-
-/* ================= NAVBAR ================= */
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-
-    background: rgba(255,255,255,0.94);
-    backdrop-filter: blur(10px);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 15px 7%;
-
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #176b38;
-}
-
-nav ul {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-nav a {
-    text-decoration: none;
-    color: #344238;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: #16823e;
-}
-
-/* ================= HERO ================= */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 110px 7% 70px;
-
-    background:
-        linear-gradient(
-            rgba(15,65,35,0.65),
-            rgba(15,65,35,0.55)
-        ),
-        url("https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=2000&q=85");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-box {
-    width: 100%;
-    max-width: 1100px;
-
-    border: 4px solid #b9dfc0;
-    border-radius: 28px;
-
-    padding: 70px 50px;
-
-    background: rgba(255,255,255,0.93);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.25);
-
-    text-align: center;
-}
-
-.small-title {
-    color: #26834b;
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 6vw, 70px);
-    color: #145c32;
-    margin-bottom: 15px;
-}
-
-.hero h2 {
-    font-size: clamp(20px, 3vw, 30px);
-    font-weight: 500;
-    color: #4a594e;
-    margin-bottom: 25px;
-}
-
-.hero p {
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.8;
-    color: #59665d;
-    font-size: 17px;
-}
-
-.green-line {
-    width: 90px;
-    height: 5px;
-    background: #69a978;
-    border-radius: 10px;
-    margin: 25px auto;
-}
-
-/* ================= SECTION ================= */
-
-section {
-    padding: 90px 7%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    color: #176b38;
-    font-size: 36px;
-    margin-bottom: 12px;
-}
-
-.section-title p {
-    color: #718078;
-}
-
-/* ================= ABOUT ================= */
-
-.about {
-    background: white;
-}
-
-.about-box {
-    max-width: 1000px;
-    margin: auto;
-
-    border-left: 7px solid #79b985;
-
-    background: #f4faf5;
-
-    padding: 35px;
-
-    border-radius: 0 20px 20px 0;
-}
-
-.about-box p {
-    line-height: 2;
-    font-size: 17px;
-}
-
-/* ================= EDUCATION ================= */
-
-.education {
-    background: #eef6ef;
-}
-
-.card-container {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-
-    gap: 25px;
-}
-
-.card {
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    border-top: 5px solid #69a978;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-}
-
-.card h3 {
-    color: #176b38;
-    margin-bottom: 15px;
-}
-
-.card p {
-    color: #5c6960;
-    line-height: 1.8;
-}
-
-/* ================= ACTIVITIES ================= */
-
-.activities {
-    background: white;
-}
-
-.activity-card {
-    background: #f5faf6;
-    border: 1px solid #d7e8d9;
-
-    padding: 28px;
-
-    border-radius: 18px;
-}
-
-.activity-card h3 {
-    color: #176b38;
-    margin-bottom: 10px;
-}
-
-.activity-card p {
-    line-height: 1.7;
-    color: #59665d;
-}
-
-/* ================= GOAL ================= */
-
-.goal {
-    background:
-        linear-gradient(
-            rgba(18,91,46,0.94),
-            rgba(18,91,46,0.94)
-        ),
-        url("https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=80");
-
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-}
-
-.goal-box {
-    max-width: 950px;
-    margin: auto;
-
-    text-align: center;
-
-    border: 3px solid #b8dfbf;
-
-    border-radius: 25px;
-
-    padding: 55px 35px;
-
-    background: rgba(255,255,255,0.08);
-}
-
-.goal-box h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.goal-box p {
-    font-size: 19px;
-    line-height: 2;
-}
-
-/* ================= CONTACT ================= */
-
-.contact {
-    background: #f5f8f4;
-}
-
-.contact-box {
-    max-width: 700px;
-    margin: auto;
-
-    background: white;
-
-    border: 3px solid #c5e3c9;
-
-    border-radius: 25px;
-
-    padding: 40px;
-
-    text-align: center;
-}
-
-.contact-box p {
-    margin: 15px 0;
-    color: #56645a;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-    background: #124d2c;
-    color: white;
-
-    text-align: center;
-
-    padding: 25px;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 700px) {
-
-    nav {
-        padding: 13px 5%;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    .hero {
-        padding: 100px 5% 50px;
-    }
-
-    .hero-box {
-        padding: 45px 22px;
-    }
-
-    section {
-        padding: 65px 5%;
-    }
-
-    .section-title h2 {
-        font-size: 29px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | สมศักดิ์ นําแสง</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Tahoma", "Arial", sans-serif;
+            color: #183b2a;
+            background: #f7faf7;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(255,255,255,0.96);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #176b3a;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #31553f;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #159447;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 110px 7% 70px;
+
+            background:
+                linear-gradient(
+                    rgba(10,55,30,0.48),
+                    rgba(10,55,30,0.52)
+                ),
+                url("https://be-ambitious.info/wp-content/uploads/2021/01/IMG_8946.jpg");
+
+            background-size: cover;
+            background-position: center 45%;
+            background-repeat: no-repeat;
+        }
+
+        .hero-box {
+            width: min(900px, 100%);
+            padding: 65px 50px;
+            text-align: center;
+
+            background: rgba(255,255,255,0.93);
+
+            border: 5px solid #b9e3c3;
+            border-radius: 28px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.22);
+
+            backdrop-filter: blur(3px);
+        }
+
+        .hero-box .small-title {
+            color: #218344;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .hero-box h1 {
+            font-size: clamp(40px, 7vw, 72px);
+            color: #176b3a;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .hero-box h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            color: #31553f;
+            margin-bottom: 18px;
+        }
+
+        .hero-box p {
+            max-width: 700px;
+            margin: auto;
+            color: #53665a;
+            font-size: 17px;
+        }
+
+        .hero-line {
+            width: 90px;
+            height: 5px;
+            background: #a8d9b3;
+            margin: 25px auto;
+            border-radius: 10px;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #176b3a;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #708075;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #ffffff;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .about-card {
+            background: #f4faf5;
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 6px solid #9bd3a8;
+        }
+
+        .about-card h3 {
+            color: #176b3a;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .about-card p {
+            color: #59675d;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            background: #eef7f0;
+        }
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+
+            border-top: 5px solid #9bd3a8;
+
+            box-shadow: 0 8px 25px rgba(30,80,45,0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(30,80,45,0.14);
+        }
+
+        .card h3 {
+            color: #176b3a;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #637066;
+        }
+
+        /* =========================
+           ACTIVITIES
+        ========================= */
+
+        .activities {
+            background: #ffffff;
+        }
+
+        .activity-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .activity {
+            padding: 28px;
+            background: #f5faf6;
+            border-radius: 18px;
+
+            border: 1px solid #d9ebdd;
+
+            transition: 0.3s;
+        }
+
+        .activity:hover {
+            transform: translateY(-5px);
+            border-color: #9bd3a8;
+        }
+
+        .activity-number {
+            display: inline-flex;
+            width: 42px;
+            height: 42px;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #dff2e3;
+            color: #176b3a;
+
+            border-radius: 50%;
+
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .activity h3 {
+            color: #176b3a;
+            margin-bottom: 8px;
+        }
+
+        .activity p {
+            color: #68756c;
+        }
+
+        /* =========================
+           GOAL
+        ========================= */
+
+        .goal {
+            min-height: 520px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    rgba(10,55,30,0.70),
+                    rgba(10,55,30,0.70)
+                ),
+                url("https://be-ambitious.info/wp-content/uploads/2021/01/IMG_8946.jpg");
+
+            background-size: cover;
+            background-position: center 45%;
+        }
+
+        .goal-box {
+            max-width: 850px;
+            text-align: center;
+
+            background: rgba(255,255,255,0.94);
+
+            padding: 50px 45px;
+
+            border-radius: 25px;
+
+            border: 4px solid #b9e3c3;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .goal-box h2 {
+            color: #176b3a;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .goal-box p {
+            color: #58675d;
+            font-size: 18px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #f0f8f2;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .contact-box h3 {
+            color: #176b3a;
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #657269;
+            margin: 7px 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #123c26;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                height: auto;
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding-top: 145px;
+            }
+
+            .hero-box {
+                padding: 45px 25px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .goal-box {
+                padding: 35px 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-<nav>
-    <div class="logo">PORTFOLIO</div>
+    <nav>
 
-    <ul>
-        <li><a href="#about">ประวัติ</a></li>
-        <li><a href="#education">การศึกษา</a></li>
-        <li><a href="#activities">กิจกรรม</a></li>
-        <li><a href="#goal">เป้าหมาย</a></li>
-        <li><a href="#contact">ติดต่อ</a></li>
-    </ul>
-</nav>
-
-
-<!-- HERO -->
-
-<header class="hero">
-
-    <div class="hero-box">
-
-        <div class="small-title">
+        <div class="logo">
             PORTFOLIO
         </div>
 
-        <h1>สมศักดิ์ นําแสง</h1>
+        <ul>
+            <li><a href="#about">ประวัติ</a></li>
+            <li><a href="#education">การศึกษา</a></li>
+            <li><a href="#activities">กิจกรรม</a></li>
+            <li><a href="#goal">เป้าหมาย</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
 
-        <div class="green-line"></div>
-
-        <h2>
-            ผู้สมัครศึกษาต่อด้านบริหารธุรกิจ
-        </h2>
-
-        <p>
-            แฟ้มสะสมผลงานเพื่อแสดงประวัติการศึกษา
-            กิจกรรม ความสามารถ และเป้าหมายในการศึกษาต่อ
-        </p>
-
-    </div>
-
-</header>
+    </nav>
 
 
-<!-- ABOUT -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
-<section class="about" id="about">
+    <section class="hero">
 
-    <div class="section-title">
+        <div class="hero-box">
 
-        <h2>ประวัติส่วนตัว</h2>
+            <div class="small-title">
+                PORTFOLIO
+            </div>
 
-        <p>About Me</p>
+            <h1>
+                สมศักดิ์ นําแสง
+            </h1>
 
-    </div>
+            <div class="hero-line"></div>
 
-    <div class="about-box">
-
-        <p>
-            ผมชื่อ <strong>สมศักดิ์ นําแสง</strong>
-            เป็นนักเรียนระดับมัธยมศึกษาตอนปลาย
-            มีความสนใจด้านธุรกิจ เทคโนโลยี
-            การสร้างสรรค์ผลงาน และการพัฒนาตนเอง
-        </p>
-
-        <p>
-            ผมต้องการนำความรู้จากการศึกษาไปต่อยอด
-            เพื่อพัฒนาความสามารถด้านบริหารธุรกิจ
-            และสร้างธุรกิจของตนเองในอนาคต
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- EDUCATION -->
-
-<section class="education" id="education">
-
-    <div class="section-title">
-
-        <h2>การศึกษา</h2>
-
-        <p>Education</p>
-
-    </div>
-
-    <div class="card-container">
-
-        <div class="card">
-
-            <h3>ระดับมัธยมศึกษา</h3>
+            <h2>
+                ผู้สมัครศึกษาต่อด้านบริหารธุรกิจ
+            </h2>
 
             <p>
-                ศึกษาในระดับมัธยมศึกษาตอนปลาย
-                พร้อมพัฒนาความรู้และทักษะผ่าน
-                กิจกรรมต่าง ๆ ภายในโรงเรียน
+                แฟ้มสะสมผลงานเพื่อแสดงประวัติ
+                ความสามารถ กิจกรรม และเป้าหมาย
+                ในการศึกษาต่อด้านบริหารธุรกิจ
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <h2>
+                ประวัติส่วนตัว
+            </h2>
+
+            <p>
+                ข้อมูลเกี่ยวกับตัวฉัน
             </p>
 
         </div>
 
 
-        <div class="card">
+        <div class="about-container">
 
-            <h3>ความสนใจ</h3>
+            <div class="about-card">
+
+                <h3>
+                    ข้อมูลส่วนตัว
+                </h3>
+
+                <p>
+                    ชื่อ : สมศักดิ์ นําแสง
+                    <br>
+                    นักเรียนระดับมัธยมศึกษาตอนปลาย
+                    <br>
+                    มีความสนใจด้านธุรกิจ เทคโนโลยี
+                    และการสร้างสรรค์ผลงาน
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    ความสนใจ
+                </h3>
+
+                <p>
+                    สนใจการบริหารธุรกิจ
+                    การทำธุรกิจ การตลาด
+                    การลงทุน เทคโนโลยี
+                    และการนำความรู้ใหม่ ๆ
+                    มาประยุกต์ใช้ในการสร้างผลงาน
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section class="education" id="education">
+
+        <div class="section-title">
+
+            <h2>
+                การศึกษา
+            </h2>
 
             <p>
-                สนใจด้านบริหารธุรกิจ
-                การตลาด เทคโนโลยี
-                การสร้างธุรกิจ และการลงทุน
+                เส้นทางการศึกษาและเป้าหมาย
             </p>
 
         </div>
 
 
-        <div class="card">
+        <div class="cards">
 
-            <h3>เป้าหมายการศึกษา</h3>
+            <div class="card">
 
-            <p>
-                ต้องการศึกษาต่อในระดับมหาวิทยาลัย
-                เพื่อพัฒนาความรู้ด้านบริหารธุรกิจ
-                และนำไปใช้ในการสร้างธุรกิจในอนาคต
-            </p>
+                <h3>
+                    ระดับมัธยมศึกษา
+                </h3>
 
-        </div>
+                <p>
+                    กำลังศึกษาอยู่ในระดับมัธยมศึกษาตอนปลาย
+                    และเตรียมตัวสำหรับการศึกษาต่อในระดับมหาวิทยาลัย
+                </p>
 
-    </div>
-
-</section>
-
-
-<!-- ACTIVITIES -->
-
-<section class="activities" id="activities">
-
-    <div class="section-title">
-
-        <h2>กิจกรรมและผลงาน</h2>
-
-        <p>Activities &amp; Works</p>
-
-    </div>
-
-    <div class="card-container">
+            </div>
 
 
-        <div class="activity-card">
+            <div class="card">
 
-            <h3>💻 Coding Project</h3>
+                <h3>
+                    สาขาที่สนใจ
+                </h3>
 
-            <p>
-                เรียนรู้การเขียนโปรแกรมและพัฒนาโครงงาน
-                ฝึกกระบวนการคิดอย่างเป็นระบบ
-                และนำเทคโนโลยีมาประยุกต์ใช้
-            </p>
+                <p>
+                    สนใจศึกษาต่อด้านบริหารธุรกิจ
+                    โดยเฉพาะความรู้เกี่ยวกับการจัดการ
+                    การตลาด และการดำเนินธุรกิจ
+                </p>
 
-        </div>
+            </div>
 
 
-        <div class="activity-card">
+            <div class="card">
 
-            <h3>🛍️ กิจกรรมการขาย</h3>
+                <h3>
+                    มหาวิทยาลัยเป้าหมาย
+                </h3>
 
-            <p>
-                เข้าร่วมกิจกรรมจำหน่ายสินค้าในโรงเรียน
-                ได้ฝึกการสื่อสาร การนำเสนอสินค้า
-                และการพูดคุยกับลูกค้า
-            </p>
+                <p>
+                    มหาวิทยาลัยเกษตรศาสตร์
+                    คณะบริหารธุรกิจ
+                </p>
+
+            </div>
 
         </div>
 
-
-        <div class="activity-card">
-
-            <h3>🔬 STEM Camp</h3>
-
-            <p>
-                เข้าร่วมกิจกรรม STEM
-                เพื่อพัฒนาทักษะการคิด วิเคราะห์
-                การแก้ปัญหา และการทำงานร่วมกับผู้อื่น
-            </p>
-
-        </div>
+    </section>
 
 
-        <div class="activity-card">
+    <!-- =========================
+         ACTIVITIES
+    ========================= -->
 
-            <h3>⚽ กิจกรรมกีฬา</h3>
+    <section class="activities" id="activities">
+
+        <div class="section-title">
+
+            <h2>
+                กิจกรรมและผลงาน
+            </h2>
 
             <p>
-                เข้าร่วมการแข่งขันกีฬาและกิจกรรมกีฬาสี
-                ได้เรียนรู้การทำงานเป็นทีม
-                ความรับผิดชอบ และความสามัคคี
+                ประสบการณ์ที่ได้เรียนรู้และพัฒนาตนเอง
             </p>
 
         </div>
 
 
-        <div class="activity-card">
+        <div class="activity-grid">
 
-            <h3>🇬🇧 English Activity</h3>
+            <div class="activity">
+
+                <div class="activity-number">
+                    01
+                </div>
+
+                <h3>
+                    Coding Project
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมและฝึกสร้างโครงงานด้านการเขียนโปรแกรม
+                    เรียนรู้การคิดอย่างเป็นระบบและนำเทคโนโลยีมาประยุกต์ใช้
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    02
+                </div>
+
+                <h3>
+                    กิจกรรมการขาย
+                </h3>
+
+                <p>
+                    มีประสบการณ์ในการขายสินค้าในกิจกรรมของโรงเรียน
+                    ฝึกการสื่อสาร การนำเสนอสินค้า และการแก้ไขสถานการณ์เฉพาะหน้า
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    03
+                </div>
+
+                <h3>
+                    STEM Camp
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรม STEM เพื่อพัฒนาทักษะการคิดวิเคราะห์
+                    การแก้ปัญหา และการทำงานร่วมกับผู้อื่น
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    04
+                </div>
+
+                <h3>
+                    กิจกรรมกีฬา
+                </h3>
+
+                <p>
+                    เข้าร่วมการแข่งขันกีฬาและกิจกรรมกีฬาสี
+                    ได้ฝึกความรับผิดชอบ การทำงานเป็นทีม
+                    และความมีน้ำใจนักกีฬา
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    05
+                </div>
+
+                <h3>
+                    English Activity
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมภาษาอังกฤษ
+                    ฝึกการพูดภาษาอังกฤษและการนำเสนอ
+                    รวมถึงออกแบบชุดประกอบการแสดงด้วยตนเอง
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    06
+                </div>
+
+                <h3>
+                    กิจกรรมสร้างสรรค์
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมต่าง ๆ ของโรงเรียน
+                    และพัฒนาความคิดสร้างสรรค์ผ่านการออกแบบ
+                    และการสร้างผลงาน
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GOAL
+    ========================= -->
+
+    <section class="goal" id="goal">
+
+        <div class="goal-box">
+
+            <h2>
+                เป้าหมายในอนาคต
+            </h2>
 
             <p>
-                เข้าร่วมกิจกรรมภาษาอังกฤษ
-                ฝึกการพูดภาษาอังกฤษ
-                และมีส่วนร่วมในการออกแบบการนำเสนอ
+                ผมมีเป้าหมายที่จะศึกษาต่อด้านบริหารธุรกิจ
+                เพื่อพัฒนาความรู้เกี่ยวกับการบริหาร
+                การตลาด และการดำเนินธุรกิจ
+                และนำความรู้ที่ได้รับไปต่อยอด
+                สู่การสร้างธุรกิจของตนเองในอนาคต
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>
+                ติดต่อ
+            </h2>
+
+            <p>
+                Portfolio ของ สมศักดิ์ นําแสง
             </p>
 
         </div>
 
 
-        <div class="activity-card">
+        <div class="contact-box">
 
-            <h3>🎨 ความคิดสร้างสรรค์</h3>
+            <h3>
+                สมศักดิ์ นําแสง
+            </h3>
 
             <p>
-                สนใจการออกแบบและการสร้างสรรค์ผลงาน
-                รวมถึงการนำเทคโนโลยีมาช่วยสร้างผลงานใหม่ ๆ
+                ผู้สมัครศึกษาต่อด้านบริหารธุรกิจ
+            </p>
+
+            <p>
+                เป้าหมาย : มหาวิทยาลัยเกษตรศาสตร์
             </p>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- GOAL -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-<section class="goal" id="goal">
+    <footer>
 
-    <div class="goal-box">
+        © 2026 สมศักดิ์ นําแสง
+        <br>
+        Portfolio
 
-        <h2>เป้าหมายในอนาคต</h2>
-
-        <p>
-            ผมมีเป้าหมายในการศึกษาต่อ
-            <strong>คณะบริหารธุรกิจ</strong>
-            และพัฒนาความรู้ด้านการบริหาร
-            การตลาด และการสร้างธุรกิจ
-        </p>
-
-        <p>
-            ในอนาคตต้องการนำความรู้ที่ได้รับ
-            มาสร้างและพัฒนาธุรกิจของตนเอง
-            พร้อมสร้างผลงานที่มีประโยชน์ต่อสังคม
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-    <div class="section-title">
-
-        <h2>ติดต่อ</h2>
-
-        <p>Contact</p>
-
-    </div>
-
-    <div class="contact-box">
-
-        <p><strong>ชื่อ:</strong> สมศักดิ์ นําแสง</p>
-
-        <p>
-            <strong>เป้าหมาย:</strong>
-            ศึกษาต่อด้านบริหารธุรกิจ
-        </p>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    © 2026 สมศักดิ์ นําแสง — Portfolio
-
-</footer>
-
+    </footer>
 
 </body>
 </html>
